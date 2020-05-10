@@ -1,13 +1,16 @@
 import React from "react";
 import "./App.css";
 
+import NasaList from './components/NasaList'
+import PetList from './components/PetList';
+
 function App() {
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      <h1>API</h1>
+        <NasaList />
+        {/* <PetList /> */}
+        {/* <CleanUpEffect /> */}
     </div>
   );
 }
