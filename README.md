@@ -1,3 +1,5 @@
+# useEffect, useState, styled-components
+
 Javascript DRY (don't repeat yourself) similars to Java Immutable.
 ReactJS adheres to both principles.
 
@@ -29,38 +31,6 @@ Default export
 
 Name export
   'export componentA' -> 'import {componentA} from 'componentA'
-
-
-
-
-## Project Set Up
-
----
-
-This project was put together using create-react-app (CRA). You will not need to install CRA in order to make this project work. Follow the steps below to setup the project with the proper dependencies.
-
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] Download project dependencies by running `npm install`
-- [ ] Start up the app using `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-      Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
-
-Follow these steps for completing your project.
-
-- [ ] Submit a Pull-Request to merge Branch into master (student's Repository).
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete by merging the branch back into master.
-- [ ] Do your magic!
-
-# _Project - NASA APOD - Part I_
-
-- This is a really fun project, and one to show your family and friends when you've finished.
-- You will be starting from scratch and building the entire app
-- You don't have any design specs to follow for this project, so you may want to start by building a basic wireframe first. Make it simple at the beginning, since you don't know what data you'll be getting back from NASA
-- Once you get the data back, there may be more than you expected, or less than you expected, so your design plans may change. That's totally fine, and very normal in the real world. Just make the proper adjustments and move forward!
 
 
 ## Pro Tips:

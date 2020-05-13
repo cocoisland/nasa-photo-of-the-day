@@ -1,15 +1,16 @@
 import React from "react";
-import "./App.css";
+//import "./App.css";
 
-import NasaList from './components/NasaList'
+//import NasaList from './components/NasaList'
 import PetList from './components/PetList';
 
 function App() {
   return (
     <div className="App">
-      <h1>API</h1>
-        <NasaList />
-        {/* <PetList /> */}
+      <h1>API</h1>  
+      <PetList />
+
+        {/* <NasaList /> */}
         {/* <CleanUpEffect /> */}
     </div>
   );
