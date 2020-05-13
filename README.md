@@ -30,16 +30,16 @@
     * component first return JSX html structure.
     * after component finish return, effect run and return cleanup effect.
     
-  4a. Default export
-  'export default componentA' -> 'import comp from 'componentA'
-
-  4b. Name export
-  'export componentA' -> 'import {componentA} from 'componentA'
+  4. Default export vs Name export
+    > export default componentA -> 'import comp from 'componentA'
+    > export componentA -> 'import {componentA} from 'componentA'
 
 
 ## Pro Tips:
 
-- You may run into an error where your components try to access object properties before your data is finished being fetched - ie. `Cannot read property 'url' of undefined`. This means that the data you passed as props is undefined, when you were expecting it to be an object. You can fix this by simply adding something like this to any component that needs to read data from your state object:
+### You may run into an error where your components try to access object properties before your data is finished being fetched - 
+> ie. `Cannot read property 'url' of undefined`. 
+> This means that the data you passed as props is undefined, when you were expecting it to be an object. You can fix this by simply adding something like this to any component that needs to read data from your state object:
 
 ```js
 // Display a loading message while the data is fetching
@@ -51,10 +51,10 @@ return (
 );
 ```
 
-Fetching Data Multiple Times with Synced Effect Hooks
-Often, we will want to make the same fetch call multiple times during the life of a component, all based on when certain data changes. It can be tempting to write a function outside of the effect hook that calls an API, then call that function from the effect hook during the mounting stage, and then subsequently call it from a handler function later. Like this:
+### Fetching Data Multiple Times with Synced Effect Hooks
+> Often, we will want to make the same fetch call multiple times during the life of a component, all based on when certain data changes. It can be tempting to write a function outside of the effect hook that calls an API, then call that function from the effect hook during the mounting stage, and then subsequently call it from a handler function later. Like this:
 
-Copy
+```js
   const [data, setData] = useState();
   const [query, setQuery] = useState("react");
 
@@ -81,13 +81,15 @@ Copy
     </>
   );
 }
-This is not safe, as the effect hook calls fetchData which relies on query. According to the React docs
+```
 
-It’s difficult to remember which props or state are used by functions outside of the effect. This is why usually you’ll want to declare functions needed by an effect inside of it. Then it’s easy to see what values from the component scope that effect depends on.
+> This is not safe, as the effect hook calls fetchData which relies on query. According to the React docs
 
-Let’s put the fetchData function inside the effect hook, and sync the hook with query:
+> It’s difficult to remember which props or state are used by functions outside of the effect. This is why usually you’ll want to declare functions needed by an effect inside of it. Then it’s easy to see what values from the component scope that effect depends on.
 
-Copy
+> Let’s put the fetchData function inside the effect hook, and sync the hook with query:
+
+```js
   const [data, setData] = useState();
   const [query, setQuery] = useState("react");
 
@@ -113,3 +115,4 @@ Copy
     </>
   );
 }
+```
